@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: kanban-realtime
+    env: node
+    plan: free
+    buildCommand: pnpm install
+    startCommand: pnpm run start:realtime
+    autoDeploy: true
+    envVars:
+      - key: WS_CORS_ORIGIN
+        value: https://your-site.netlify.app
